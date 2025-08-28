@@ -1,0 +1,244 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #6a0dad; /* 紫色 */
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #d8bfd8; /* 浅紫色 */
+}
+
+/* 大标题区域样式 */
+.hero {
+    height: 40vh; /* 占页面高度40% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #333;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+/* 主要内容区域样式 */
+.main-content {
+    max-width: 1200px;
+    margin: 4rem auto; /* 向下移动卡片栏 */
+    padding: 0 2rem;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* 卡片样式 */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+    min-height: 400px; /* 增加卡片高度 */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-description {
+    margin-bottom: 1rem;
+    color: #666;
+    min-height: 100px;
+}
+
+.card-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 0.8rem;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.detail-value {
+    font-weight: bold;
+    color: #333;
+}
+
+.card-footer {
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.card-button {
+    background-color: #6a0dad; /* 紫色 */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    text-decoration: none; /* 去掉下划线 */
+    display: inline-block; /* 保持按钮样式 */
+}
+
+.card-button:hover {
+    background-color: #8a2be2; /* 深紫色 */
+}
+
+/* 穿插效果 */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background-color: #6a0dad; /* 紫色 */
+    z-index: 1;
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #f5f5f5;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-menu {
+        margin-top: 1rem;
+    }
+    
+    .nav-item {
+        margin: 0 1rem;
+    }
+    
+    .hero {
+        height: 30vh; /* 响应式hero高度 */
+        padding: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-content {
+        margin: 3rem auto; /* 响应式卡片栏位置 */
+    }
+    
+    .card {
+        min-height: 250px; /* 响应式卡片高度 */
+    }
+}
